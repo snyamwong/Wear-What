@@ -1,0 +1,116 @@
+{
+  "location": {
+    "woeid": 2367105,
+    "city": "Boston",
+    "region": " MA",
+    "country": "United States",
+    "lat": 42.358631,
+    "long": -71.056702,
+    "timezone_id": "America/New_York"
+  },
+  "current_observation": {
+    "wind": {
+      "chill": 10,
+      "direction": 310,
+      "speed": 20.51
+    },
+    "atmosphere": {
+      "humidity": 82,
+      "visibility": 10,
+      "pressure": 29.23,
+      "rising": 0
+    },
+    "astronomy": {
+      "sunrise": "7:08 am",
+      "sunset": "4:43 pm"
+    },
+    "condition": {
+      "text": "Breezy",
+      "code": 23,
+      "temperature": 25
+    },
+    "pubDate": 1548028800
+  },
+  "forecasts": [
+    {
+      "day": "Sun",
+      "date": 1547960400,
+      "low": 14,
+      "high": 36,
+      "text": "Rain And Snow",
+      "code": 5
+    },
+    {
+      "day": "Mon",
+      "date": 1548046800,
+      "low": 6,
+      "high": 12,
+      "text": "Breezy",
+      "code": 23
+    },
+    {
+      "day": "Tue",
+      "date": 1548133200,
+      "low": 7,
+      "high": 27,
+      "text": "Mostly Sunny",
+      "code": 34
+    },
+    {
+      "day": "Wed",
+      "date": 1548219600,
+      "low": 19,
+      "high": 47,
+      "text": "Showers",
+      "code": 11
+    },
+    {
+      "day": "Thu",
+      "date": 1548306000,
+      "low": 40,
+      "high": 49,
+      "text": "Showers",
+      "code": 11
+    },
+    {
+      "day": "Fri",
+      "date": 1548392400,
+      "low": 25,
+      "high": 39,
+      "text": "Breezy",
+      "code": 23
+    },
+    {
+      "day": "Sat",
+      "date": 1548478800,
+      "low": 18,
+      "high": 28,
+      "text": "Partly Cloudy",
+      "code": 30
+    },
+    {
+      "day": "Sun",
+      "date": 1548565200,
+      "low": 26,
+      "high": 38,
+      "text": "Mostly Cloudy",
+      "code": 28
+    },
+    {
+      "day": "Mon",
+      "date": 1548651600,
+      "low": 28,
+      "high": 36,
+      "text": "Breezy",
+      "code": 23
+    },
+    {
+      "day": "Tue",
+      "date": 1548738000,
+      "low": 24,
+      "high": 32,
+      "text": "Partly Cloudy",
+      "code": 30
+    }
+  ]
+}
