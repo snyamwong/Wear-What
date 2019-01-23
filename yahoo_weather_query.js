@@ -1,4 +1,4 @@
-// Require node-oauth package: npm install oauth, npm install fs
+// Require node-oauth package: npm install oauth
 
 var OAuth = require('oauth');
 var fs = require('fs');
@@ -28,9 +28,15 @@ request.get(
             console.log(err);
         } else {
             // Data is JSON String, so first convert it to JSON Object via JSON.parse
-            data = JSON.stringify(JSON.parse(data), null, 2);
+            data = JSON.parse(data);
+
+            temperature = data.current_observation.condition.temperature;
+
+            getDINAJ(temperature);
 
             // temp save data to file
+            /*
+            data = JSON.stringify(JSON.parse(data), null, 2);
             fs.writeFile('sunday_boston_weather.json', data, function(error) {
                 if (error) {
                     console.log(err);
@@ -38,6 +44,15 @@ request.get(
                     console.log("worked")
                 }
             });
+            */
         }
     }
 );
+
+function getDINAJ(temperature) {
+    if (temperature < 60) {
+        console.log("You need a jacket.")
+    } else {
+        console.log("You don't need a jacket.")
+    }
+}
