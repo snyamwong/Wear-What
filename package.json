@@ -1,0 +1,26 @@
+{
+  "name": "wear-what",
+  "version": "1.0.0",
+  "description": "a website that analyzes the weather of your current location, then recommends what to wear to prepare for the weather",
+  "main": "yahoo_weather_query.js",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "jquery": "^3.3.1",
+    "oauth": "^0.9.15",
+    "popper.js": "^1.14.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinyamwong/Wear-What.git"
+  },
+  "author": "tin wong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tinyamwong/Wear-What/issues"
+  },
+  "homepage": "https://github.com/tinyamwong/Wear-What#readme"
+}
