@@ -6,6 +6,7 @@
   "dependencies": {
     "bootstrap": "^4.2.1",
     "jquery": "^3.3.1",
+    "mongodb": "^3.1.13",
     "oauth": "^0.9.15",
     "popper.js": "^1.14.7"
   },
