@@ -3,10 +3,9 @@
 <head>
     <title>Wear What</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -14,23 +13,45 @@
         <h1>Wear What</h1>
     </header>
 
-    <nav class="nav justify-content-center">
-        <a class="nav-link active" href="#">Active</a>
-    </nav>
-
     <section>
-        <form class="" action="index.html" method="post">
-            <div class="form-grpup">
-                <input type="location" class="form-control" id="location" placeholder="Location">
-                <input type="submit" style="visibility: hidden">
+        <p class="center">
+            So, you're confused about what to wear because yesterday was 30 degrees,
+            yet today it is 55 degrees.
+            <br><br>
+            (Just New England things.)
+            <br><br>
+            Using Wear What, we can simplify the process for you by telling you what to wear based on the weather.
+            <br><br>
+            Intutition is nice, but technology is even nicer.
+        </p>
+
+        <form action="index.html" method="post">
+            <div class="switch_field center">
+                <h3>Gender</h3>
+                <input type="radio" name="gender" id="men" value="men"/>
+                <label for="men">Men</label>
+                <input type="radio" name="gender" id="women" value="women"/>
+                <label for="women">Women</label>
             </div>
+
+            <div class="switch_field center">
+                <h3>Attire</h3>
+                <input type="radio" name="attire" id="business" value="business"/>
+                <label for="business">Business</label>
+                <input type="radio" name="attire" id="business_casual" value="business_casual"/>
+                <label for="business_casual">Business Casual</label>
+                <input type="radio" name="attire" id="casual" value="casual"/>
+                <label for="casual">Casual</label>
+            </div>
+
+            <div class="clear center">
+                <h3>Location</h3>
+                <label for="location"></label>
+                <input type="text" name="location" id="location" placeholder="enter your location here.">
+            </div>
+
+            <input type="submit" style="visibility: hidden">
         </form>
     </section>
-
-    <section>
-        <h2>About</h2>
-    </section>
-
-    <footer></footer>
 </body>
 </html>
