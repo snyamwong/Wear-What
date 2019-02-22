@@ -3,7 +3,7 @@
 <head>
     <title>Wear What</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
     <link rel="stylesheet" href="index.css">
@@ -26,29 +26,28 @@
         </p>
 
         <form action="index.html" method="post">
-            <div class="switch_field">
-                <p class="left">
-                    <input type="radio" name="gender" id="switch_left" value="men"/>
-                    <label for="switch_left">Men</label>
-                    <input type="radio" name="gender" id="switch_right" value="women"/>
-                    <label for="switch_right">Women</label>
-                </p>
-
-                <p class="right">
-                    <input type="radio" name="attire" id="business" value="business"/>
-                    <label for="business">Business</label>
-                    <input type="radio" name="attire" id="business_casual" value="business_casual"/>
-                    <label for="business_casual">Business Casual</label>
-                    <input type="radio" name="attire" id="casual" value="casual"/>
-                    <label for="casual">Casual</label>
-                </p>
+            <div class="switch_field center">
+                <h3>Gender</h3>
+                <input type="radio" name="gender" id="men" value="men"/>
+                <label for="men">Men</label>
+                <input type="radio" name="gender" id="women" value="women"/>
+                <label for="women">Women</label>
             </div>
 
-            <div class="">
-                <p class="clear">
-                    <label for="location"></label>
-                    <input type="text" name="location" id="location" placeholder="enter your location here.">
-                </p>
+            <div class="switch_field center">
+                <h3>Attire</h3>
+                <input type="radio" name="attire" id="business" value="business"/>
+                <label for="business">Business</label>
+                <input type="radio" name="attire" id="business_casual" value="business_casual"/>
+                <label for="business_casual">Business Casual</label>
+                <input type="radio" name="attire" id="casual" value="casual"/>
+                <label for="casual">Casual</label>
+            </div>
+
+            <div class="clear center">
+                <h3>Location</h3>
+                <label for="location"></label>
+                <input type="text" name="location" id="location" placeholder="enter your location here.">
             </div>
 
             <input type="submit" style="visibility: hidden">
