@@ -18,6 +18,9 @@ header {
 }
 
 #location {
+    /* Box Model */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid;
     width: 100%;
     height: 2em;
 }
@@ -27,25 +30,31 @@ header {
     margin-bottom: 1em;
 }
 
-.switch_field {
-
-}
-
 .switch_field input {
-    position: absolute;
-    clip: rect(0, 0, 0, 0);
+    /* Position */
+    position: absolute; /* Places the radio button with the label */
+
+    /* Clipping */
+    clip: rect(0, 0, 0, 0); /* Removes the radio button */
 }
 
 .switch_field label {
-    width: 25%;
+    /* Display */
     display: inline-block;
-    background-color: #e4e4e4;
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 16px;
-    text-align: center;
-    padding: 10px 10px;
+
+    /* Box Model */
+    margin-right: -8px; /* Gets rid of the white space between elements */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.2);
-    margin-right: -8px;
+    width: 25%;
+    padding: 10px 10px;
+
+    /* Background */
+    background-color: #e4e4e4;
+
+    /* Typography */
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .switch_field label:hover {
@@ -55,6 +64,8 @@ header {
 .switch_field input:checked + label {
     background-color: #A5DC86;
 }
+
+/* Media Queries */
 
 @media screen and (max-width:700px) {
     .switch_field label {
