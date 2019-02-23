@@ -1,0 +1,29 @@
+#title {
+	text-align: center;
+}
+
+#outfit_form {
+	text-align: center;
+}
+
+[type='radio'] {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+#submit {
+	margin: 50px;
+}
+
+.option img {
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+	margin: 0 50px;
+}
+
+[type='radio']:checked + img {
+	outline: 5px solid #000000;
+}
