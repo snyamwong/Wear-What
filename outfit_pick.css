@@ -1,9 +1,14 @@
 #title {
 	text-align: center;
+	color: #FFA500;
 }
 
 #outfit_form {
 	text-align: center;
+}
+
+#submit {
+	margin: 50px;
 }
 
 [type='radio'] {
@@ -13,10 +18,6 @@
 	height: 0;
 }
 
-#submit {
-	margin: 50px;
-}
-
 .option img {
 	width: 100px;
 	height: 100px;
@@ -24,6 +25,26 @@
 	margin: 0 50px;
 }
 
-[type='radio']:checked + img {
-	outline: 5px solid #000000;
+[type='radio']:checked + .upper {
+	outline: 5px solid #FF0000;
+}
+
+[type='radio']:checked + .lower {
+	outline: 5px solid #0000FF;
+}
+
+[type='radio']:checked + .foot {
+	outline: 5px solid #00FF00;
+}
+
+#upper_label {
+ 	color: #FF0000;
+}
+
+#lower_label {
+	color: #0000FF;
+}
+
+#foot_label {
+	color: #00FF00;
 }
