@@ -3,6 +3,33 @@
 	color: #FFA500;
 }
 
+#degrees_buttons {
+	position: absolute;
+	left: -65px;
+}
+
+#f_button, #c_button {
+	font-size: 18pt;
+	width: 50px;
+	height: 50px;
+	margin-top: 15px;
+	background: #ADD8E6;
+}
+
+#weather {
+	outline: 5px solid #000000;
+	width: 40%;
+	height: 150px;
+	margin: auto;
+	position: relative;
+}
+
+#weather_photo {
+	width: 30%;
+	height: 100%;
+	float: left;
+}
+
 #outfit_form {
 	text-align: center;
 }
