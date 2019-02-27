@@ -6,48 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header>
-        <h1>Wear What</h1>
+        <div class="jumbotron bg-info">
+            <h1 class="display-4 text-center">Wear What</h1>
+            <p class="text-center">A smarter way to dress for the weather.</p>
+            <hr class="my-4">
+            <p class="text-white">
+                So, you're confused about what to wear because yesterday was 30 degrees,
+                yet today it is 55 degrees.
+                <br><br>
+                (Just New England things.)
+                <br><br>
+                Using Wear What, we can simplify the process for you by telling you what to wear based on the weather.
+                <br><br>
+                Intutition is nice, but technology is even nicer.
+            </p>
+        </div>
     </header>
 
     <section>
-        <p class="center">
-            So, you're confused about what to wear because yesterday was 30 degrees,
-            yet today it is 55 degrees.
-            <br><br>
-            (Just New England things.)
-            <br><br>
-            Using Wear What, we can simplify the process for you by telling you what to wear based on the weather.
-            <br><br>
-            Intutition is nice, but technology is even nicer.
-        </p>
-
         <form action="index.html" method="post">
-            <div class="switch_field center">
-                <h3>Gender</h3>
-                <input type="radio" name="gender" id="men" value="men"/>
-                <label for="men">Men</label>
-                <input type="radio" name="gender" id="women" value="women"/>
-                <label for="women">Women</label>
+            <div class="form-row">
+                <div class="col">
+                    <legend>Gender</legend>
+                    <div class="form-group">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="men" name="gender" value="male" class="custom-control-input" required>
+                            <label class="custom-control-label" for="men">Men</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="women" name="gender" value="women" class="custom-control-input">
+                            <label class="custom-control-label" for="women">Women</label>
+                        </div>
+                        <div class="invalid-feedback">
+                            Please select one of the options.
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <legend>Attire</legend>
+                    <div class="form-group">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="business" name="attire" value="business" class="custom-control-input" required>
+                            <label class="custom-control-label" for="business">Business</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="business-casual" name="attire" value="business-casual" class="custom-control-input">
+                            <label class="custom-control-label" for="business-casual">Business Casual</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="casual" name="attire" value="casual" class="custom-control-input">
+                            <label class="custom-control-label" for="casual">Casual</label>
+                        </div>
+                        <div class="invalid-feedback">
+                            Please select one of the options.
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="switch_field center">
-                <h3>Attire</h3>
-                <input type="radio" name="attire" id="business" value="business"/>
-                <label for="business">Business</label>
-                <input type="radio" name="attire" id="business_casual" value="business_casual"/>
-                <label for="business_casual">Business Casual</label>
-                <input type="radio" name="attire" id="casual" value="casual"/>
-                <label for="casual">Casual</label>
-            </div>
-
-            <div class="clear center">
-                <h3>Location</h3>
-                <label for="location"></label>
-                <input type="text" name="location" id="location" placeholder="enter your location here.">
+            <div class="form-row">
+                <div class="col">
+                    <legend>Location</legend>
+                    <div class="form-group">
+                        <input type="text" id="location" name="location" class="form-control" placeholder="ex. Boston, MA" required>
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide a valid location.
+                    </div>
+                </div>
             </div>
 
             <input type="submit" style="visibility: hidden">
