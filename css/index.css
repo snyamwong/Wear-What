@@ -1,0 +1,17 @@
+legend {
+    margin: 1em 0em;
+    padding: 1em;
+    background-color: #ADD8E6;
+}
+
+#location {
+    padding: 1em;
+}
+
+form {
+    padding: 2em;
+
+    border: 1px;
+    border-style: inset;
+    margin: 1em;
+}
