@@ -23,8 +23,26 @@ legend {
 
 form {
     padding: 2em;
-
     border: 1px;
     border-style: inset;
     margin: 1em;
+}
+
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+    opacity: .4;
+    cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+    opacity: 1;
+    outline: 2px solid #f00;
 }
