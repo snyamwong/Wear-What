@@ -1,3 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    margin: 1em;
+}
+
+.col {
+    margin: 1em;
+}
+
 legend {
     margin: 1em 0em;
     padding: 1em;
