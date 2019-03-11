@@ -1,6 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
+html {
+  scroll-behavior: smooth;
 }
 
 .row {
@@ -45,4 +44,16 @@ form {
 [type=radio]:checked + img {
     opacity: 1;
     outline: 2px solid #f00;
+}
+
+.first {
+    width: 100%;
+    height: 1000px;
+    background: #ccc;
+}
+
+.second {
+    width: 100%;
+    height: 1000px;
+    background: #999;
 }

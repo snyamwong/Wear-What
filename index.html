@@ -13,6 +13,10 @@
 </head>
 
 <body>
+    <!-- JS -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
     <header>
         <div class="jumbotron bg-info text-white">
             <h1 class="display-4 text-center">Wear What</h1>
@@ -29,13 +33,14 @@
                 Intutition is nice, but technology is even nicer.
             </p>
             <div class="text-center">
-                <a href="#" class="btn btn-primary">About</a>
-                <a href="#" class="btn btn-primary">Get Started</a>
+                <a href="#about" id="btn-about" class="btn btn-primary">About</a>
+                <a href="#get-started" id="btn-get-started" class="btn btn-primary">Get Started</a>
             </div>
         </div>
     </header>
 
-    <section>
+    <section id="about">
+        <h1 class="display-4 text-center">About!</h1>
         <div class="container">
             <div class="row">
                 <div class="col card mx-auto text-center">
@@ -71,7 +76,8 @@
         </div>
     </section>
 
-    <section>
+    <section id="get-started">
+        <h1 class="display-4 text-center">Get Started!</h1>
         <form action="index.html" method="post">
             <div class="container text-center">
                 <div class="row">
@@ -136,6 +142,8 @@
             <input type="submit" style="visibility: hidden">
         </form>
     </section>
+
+
 </body>
 
 </html>
