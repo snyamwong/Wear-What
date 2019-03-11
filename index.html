@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <title>Wear What</title>
     <meta charset="utf-8">
@@ -10,9 +11,14 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
+    <!-- JS -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
     <header>
-        <div class="jumbotron bg-info">
+        <div class="jumbotron bg-info text-white">
             <h1 class="display-4 text-center">Wear What</h1>
             <p class="text-center">A smarter way to dress for the weather.</p>
             <hr>
@@ -26,10 +32,55 @@
                 <br><br>
                 Intutition is nice, but technology is even nicer.
             </p>
+            <div class="text-center">
+                <a href="#about" id="btn-about" class="btn btn-primary">About</a>
+                <a href="#get-started" id="btn-get-started" class="btn btn-primary">Get Started</a>
+            </div>
         </div>
     </header>
 
-    <section>
+    <section id="about">
+        <h1 class="display-4 text-center">About!</h1>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col card mx-auto">
+                    <div class="card-header">Planning for the Weather</div>
+                    <div class="card-body">
+                        <h5 class="card-title">We can help you dress for sunny, rainy, and all the other weather.</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 card mx-auto">
+                    <div class="card-header">
+                        Brick Season Clothes
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">To wear jacket, or to not wear jacket...</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 card mx-auto">
+                    <div class="card-header">
+                        WE MEAN BUSINESS.
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Business means business.</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 card mx-auto">
+                    <div class="card-header">
+                        Casual Friday!
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Go all out for Friday!</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="get-started">
+        <h1 class="display-4 text-center">Get Started!</h1>
         <form action="index.html" method="post">
             <div class="container text-center">
                 <div class="row">
@@ -37,12 +88,16 @@
                         <p>Gender</p>
                     </legend>
                     <div class="col-md-6">
-                        <input type="radio" id="men" name="gender" value="male" required>
-                        <label for="men">Men</label>
+                        <label for="men">
+                            <input type="radio" id="men" name="gender" value="male" required>
+                            <img src="image/Villager_SSB4.png" alt="">
+                        </label>
                     </div>
                     <div class="col-md-6">
-                        <input type="radio" id="women" name="gender" value="women">
-                        <label for="women">Women</label>
+                        <label for="women">
+                            <input type="radio" id="women" name="gender" value="women">
+                            <img src="image/Villager_Female_SSB4.png" alt="">
+                        </label>
                     </div>
                     <div class="invalid-feedback">
                         Please select one of the options.
@@ -53,16 +108,22 @@
                         <p>Attire</p>
                     </legend>
                     <div class="col-md-4">
-                        <input type="radio" id="business" name="attire" value="business" required>
-                        <label for="business">Business</label>
+                        <label for="business">
+                            <input type="radio" id="business" name="attire" value="business" required>
+                            <img src="image/business.png" alt="">
+                        </label>
                     </div>
                     <div class="col-md-4">
-                        <input type="radio" id="business-casual" name="attire" value="business-casual">
-                        <label for="business-casual">Business Casual</label>
+                        <label for="business-casual">
+                            <input type="radio" id="business-casual" name="attire" value="business-casual">
+                            <img src="image/business_casual.png" alt="">
+                        </label>
                     </div>
                     <div class="col-md-4">
-                        <input type="radio" id="casual" name="attire" value="casual">
-                        <label for="casual">Casual</label>
+                        <label for="casual">
+                            <input type="radio" id="casual" name="attire" value="casual">
+                            <img src="image/casual.png" alt="">
+                        </label>
                     </div>
                     <div class="invalid-feedback">
                         Please select one of the options.
@@ -84,5 +145,8 @@
             <input type="submit" style="visibility: hidden">
         </form>
     </section>
+
+
 </body>
+
 </html>
