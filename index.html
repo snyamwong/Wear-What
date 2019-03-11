@@ -17,11 +17,19 @@
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 
-    <header>
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto">
+            <h1 class="mb-1">Wear What</h1>
+            <h5 class="mb-5"><em>a smarter way to dress for the weather</em></h5>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">About</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#get-started">Get Started</a>
+        </div>
+        <div class="overlay"></div>
+    </header>
+
+    <section id="about">
+        <h1 class="display-4 text-center">About</h1>
         <div class="jumbotron bg-info text-white">
-            <h1 class="display-4 text-center">Wear What</h1>
-            <p class="text-center">A smarter way to dress for the weather.</p>
-            <hr>
             <p class="text-white">
                 So, you're confused about what to wear because yesterday was 30 degrees,
                 yet today it is 55 degrees.
@@ -32,15 +40,7 @@
                 <br><br>
                 Intutition is nice, but technology is even nicer.
             </p>
-            <div class="text-center">
-                <a href="#about" id="btn-about" class="btn btn-primary">About</a>
-                <a href="#get-started" id="btn-get-started" class="btn btn-primary">Get Started</a>
-            </div>
         </div>
-    </header>
-
-    <section id="about">
-        <h1 class="display-4 text-center">About!</h1>
         <div class="container text-center">
             <div class="row">
                 <div class="col card mx-auto">
@@ -80,7 +80,7 @@
     </section>
 
     <section id="get-started">
-        <h1 class="display-4 text-center">Get Started!</h1>
+        <h1 class="display-4 text-center">Get Started</h1>
         <form action="index.html" method="post">
             <div class="container text-center">
                 <div class="row">
