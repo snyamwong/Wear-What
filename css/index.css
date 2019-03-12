@@ -1,5 +1,70 @@
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body h1, h2, h3, h4, h5 {
+    font-family: 'Raleway', sans-serif;
+}
+
+.btn {
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+}
+
+.btn-xl {
+    padding: 1rem 2rem;
+}
+
+.masthead {
+    min-height: 30rem;
+    position: relative;
+    display: table;
+    width: 100%;
+    height: auto;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.1))), url("../image/bg-masthead.jpg");
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../image/bg-masthead.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.masthead h1 {
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+    font-style: oblique;
+    color: white;
+}
+
+.masthead h5 {
+    margin: 0;
+    padding: 0;
+    font-style: oblique;
+    color: white;
+}
+
+@media (min-width: 992px) {
+    .masthead {
+        height: 100vh;
+    }
+    .masthead h1 {
+        font-size: 5.5rem;
+    }
+}
+
+.content-section {
+    padding-top: 4rem;
+}
+
+.content-section-heading {
+    font-size: 4rem;
 }
 
 .row {
@@ -10,14 +75,12 @@ html {
     margin: 1em;
 }
 
-legend {
-    margin: 1em 0em;
-    padding: 1em;
-    background-color: #ADD8E6;
+.card {
+    margin: 1em;
 }
 
-#location {
-    padding: 1em;
+.jumbotron {
+    margin: 1em;
 }
 
 form {
@@ -27,7 +90,13 @@ form {
     margin: 1em;
 }
 
-[type=radio] {
+legend {
+    margin: 1em 0em;
+    padding: 1em;
+    background-color: #ADD8E6;
+}
+
+[type = radio] {
     position: absolute;
     opacity: 0;
     width: 0;
@@ -35,25 +104,14 @@ form {
 }
 
 /* IMAGE STYLES */
-[type=radio] + img {
-    opacity: .4;
+[type = radio] + img {
+    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+    filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
     cursor: pointer;
 }
 
-/* CHECKED STYLES */
-[type=radio]:checked + img {
-    opacity: 1;
+[type = radio]:checked + img {
+    -webkit-filter: grayscale(0);
+    filter: none;
     outline: 2px solid #f00;
-}
-
-.first {
-    width: 100%;
-    height: 1000px;
-    background: #ccc;
-}
-
-.second {
-    width: 100%;
-    height: 1000px;
-    background: #999;
 }
