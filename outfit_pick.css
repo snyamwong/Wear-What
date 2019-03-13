@@ -3,12 +3,26 @@
 	padding: 0;
 }
 
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2 {
+	font-family: 'Raleway', sans-serif;
+}
+
 #main_grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-areas: 
+	". logo_text ."
 	"buttons weather ."
-	". title ."
+	". title . "
+}
+
+#logo_text {
+	grid-area: logo_text;
+	justify-self: center;
 }
 
 #degrees_buttons {
@@ -27,32 +41,24 @@
 #weather {
 	grid-area: weather;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-areas: 
-	"photo degrees . location"
-	". . . ."
-	". type . date";
+	"degrees . location"
+	"type . date";
 	margin-top: 15px;
-}
-
-#weather_photo {
-	grid-area: photo;
-	grid-row: span 3;
-	align-self: center;
-	justify-self: center;
-	width: 115px;
-	height: 115px;
 }
 
 #degrees {
 	grid-area: degrees;
 	align-self: center;
+	margin-bottom: 30px;
 }
 
 #location {
 	grid-area: location;
 	align-self: center;
 	justify-self: end;
+	margin-bottom: 30px;
 }
 
 #type {
