@@ -6,7 +6,7 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-body h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Raleway', sans-serif;
 }
 
@@ -59,20 +59,28 @@ body h1, h2, h3, h4, h5 {
     }
 }
 
+#about, footer {
+    /* background-color: #698FAE; */
+    background-color: #BEC5D3;
+}
+
+#get-started {
+    background-color: #F5E3E4;
+}
+
+footer {
+    text-align: center;
+    font-size: .6em;
+    margin-bottom: 0px;
+    overflow: hidden;
+}
+
 .content-section {
     padding-top: 4rem;
 }
 
 .content-section-heading {
     font-size: 4rem;
-}
-
-.row {
-    margin: 1em;
-}
-
-.col {
-    margin: 1em;
 }
 
 .card {
@@ -84,10 +92,7 @@ body h1, h2, h3, h4, h5 {
 }
 
 form {
-    padding: 2em;
-    border: 1px;
-    border-style: inset;
-    margin: 1em;
+    padding: 4rem;
 }
 
 legend {
