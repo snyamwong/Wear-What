@@ -1,11 +1,11 @@
 // Require node-oauth package: npm install oauth
 
-var OAuth = require('oauth');
-var fs = require('fs');
+var OAuth = require('oauth')
+var fs = require('fs')
 
 var header = {
     "Yahoo-App-Id": "dwjs1W32"
-};
+}
 
 var request = new OAuth.OAuth(
     null,
@@ -17,38 +17,39 @@ var request = new OAuth.OAuth(
     'HMAC-SHA1',
     null,
     header
-);
+)
 
-request.get(
-    'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=boston,ma&format=json',
-    null,
-    null,
-    function (err, data, result) {
-        if (err) {
-            console.log(err);
-        } else {
-            // Data is JSON String, so first convert it to JSON Object via JSON.parse
-            data = JSON.parse(data);
+function getYahooWeatherData() {
+    request.get(
+        'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=boston,ma&format=json',
+        null,
+        null,
+        function (err, data, result) {
+            if (err) {
+                console.log(err)
+            } else {
+                // Data is JSON String, so first convert it to JSON Object via JSON.parse
+                data = JSON.parse(data)
 
-            temperature = data.current_observation.condition.temperature;
-
-            getDINAJ(temperature);
-
-            // temp save data to file
-            /*
-            data = JSON.stringify(JSON.parse(data), null, 2);
-            fs.writeFile('sunday_boston_weather.json', data, function(error) {
-                if (error) {
-                    console.log(err);
-                } else {
-                    console.log("worked")
-                }
-            });
-            */
+                // temp save data to file
+                /*
+                data = JSON.stringify(JSON.parse(data), null, 2);
+                fs.writeFile('sunday_boston_weather.json', data, function(error) {
+                    if (error) {
+                        console.log(err);
+                    } else {
+                        console.log("worked")
+                    }
+                });
+                */
+            }
         }
-    }
-);
+    )
+}
 
+/*
+    DINAJ means Do I need a Jacket, just a dummy function
+*/
 function getDINAJ(temperature) {
     if (temperature < 60) {
         console.log("You need a jacket.")
