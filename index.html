@@ -1,36 +1,195 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <title>Wear What</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
+    <link rel="icon" href="image/favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 </head>
+
 <body>
-    <header>
-        <h1>Wear What</h1>
+    <!-- JS -->
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <!-- Header -->
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto">
+            <h1 class="mb-1">Wear What</h1>
+            <h5 class="mb-5"><em>a smarter way to dress for the weather</em></h5>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">About</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#get-started">Get Started</a>
+        </div>
     </header>
 
-    <nav class="nav justify-content-center">
-        <a class="nav-link active" href="#">Active</a>
-    </nav>
-
-    <section>
-        <form class="" action="index.html" method="post">
-            <div class="form-grpup">
-                <input type="location" class="form-control" id="location" placeholder="Location">
-                <input type="submit" style="visibility: hidden">
+    <!-- Section: About -->
+    <section id="about" class="content-section">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <h1 class="content-section-heading text-center mb-5">About</h1>
+                </div>
             </div>
+            <div class="row">
+                <div class="col mx-auto">
+                    <div class="jumbotron bg-info text-white">
+                        <p class="text-white">
+                            So, you're confused about what to wear because yesterday was 30 degrees,
+                            yet today it is 55 degrees.
+                            <br><br>
+                            (Just New England things.)
+                            <br><br>
+                            Using Wear What, we can simplify the process for you by telling you what to wear based on the weather.
+                            <br><br>
+                            Intutition is nice, but technology is even nicer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-11 card mx-auto">
+                    <div class="card-header">
+                        <h4>Planning for the Weather</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-footer">
+                        <h6>We can help you dress for sunny, rainy, and all the other weather.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 card mx-auto">
+                    <div class="card-header">
+                        <h4>Brick Season Clothes</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-footer">
+                        <h6>To wear jacket, or to not wear jacket...</h6>
+                    </div>
+                </div>
+                <div class="col-md-5 card mx-auto">
+                    <div class="card-header">
+                        <h4>WE MEAN BUSINESS.</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-footer">
+                        <h6 class="card-title">Business means business.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 card mx-auto">
+                    <div class="card-header">
+                        <h4>IT HOT.</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-footer">
+                        <h6>We be sweating.</h6>
+                    </div>
+                </div>
+                <div class="col-md-5 card mx-auto">
+                    <div class="card-header">
+                        <h4>Casual Friday!</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-footer">
+                        <h6>Go all out for Friday!</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Get Started -->
+    <section id="get-started" class="content-section">
+        <h1 class="content-section-heading text-center mb-5">Get Started</h1>
+        <form action="index.html" method="post">
+            <div class="container text-center">
+                <div class="row">
+                    <legend>
+                        <p>Gender</p>
+                    </legend>
+                    <div class="col-md-6">
+                        <label for="men">
+                            <input type="radio" id="men" name="gender" value="male" required>
+                            <img src="image/Villager_SSB4.png" alt="">
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="women">
+                            <input type="radio" id="women" name="gender" value="women">
+                            <img src="image/Villager_Female_SSB4.png" alt="">
+                        </label>
+                    </div>
+                    <div class="invalid-feedback">
+                        Please select one of the options.
+                    </div>
+                </div>
+                <div class="row">
+                    <legend>
+                        <p>Attire</p>
+                    </legend>
+                    <div class="col-md-4">
+                        <label for="business">
+                            <input type="radio" id="business" name="attire" value="business" required>
+                            <img src="image/business.jpg" alt="">
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="business-casual">
+                            <input type="radio" id="business-casual" name="attire" value="business-casual">
+                            <img src="image/business_casual.jpg" alt="">
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="casual">
+                            <input type="radio" id="casual" name="attire" value="casual">
+                            <img src="image/casual.jpg" alt="">
+                        </label>
+                    </div>
+                    <div class="invalid-feedback">
+                        Please select one of the options.
+                    </div>
+                </div>
+                <div class="row">
+                    <legend>
+                        <p>Location</p>
+                    </legend>
+                    <div class="col-md-12">
+                        <input type="text" id="location" name="location" class="form-control" placeholder="ex. Boston, MA" required>
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide a valid location.
+                    </div>
+                </div>
+            </div>
+
+            <input type="submit" style="visibility: hidden">
         </form>
     </section>
 
-    <section>
-        <h2>About</h2>
-    </section>
+    <footer>
+        <p>Made with 💖 by Tin, John and Mo.</p>
+    </footer>
 
-    <footer></footer>
 </body>
+
 </html>
