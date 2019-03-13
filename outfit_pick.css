@@ -1,41 +1,162 @@
-#title {
-	text-align: center;
-	color: #FFA500;
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#main_grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: 
+	"buttons weather ."
+	". title ."
 }
 
 #degrees_buttons {
-	position: absolute;
-	left: -65px;
+	grid-area: buttons;
+	justify-self: end;
+	margin-top: 2em;
+	margin-right: 1em;
 }
 
-#f_button, #c_button {
-	font-size: 18pt;
-	width: 50px;
-	height: 50px;
-	margin-top: 15px;
-	background: #ADD8E6;
+.deg_button {
+	font-size: 10pt;
+	width: 28px;
+	height: 28px;
 }
 
 #weather {
-	outline: 5px solid #000000;
-	width: 40%;
-	height: 150px;
-	margin: auto;
-	position: relative;
+	grid-area: weather;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-areas: 
+	"photo degrees . location"
+	". . . ."
+	". type . date";
+	margin-top: 15px;
 }
 
 #weather_photo {
-	width: 30%;
-	height: 100%;
-	float: left;
+	grid-area: photo;
+	grid-row: span 3;
+	align-self: center;
+	justify-self: center;
+	width: 115px;
+	height: 115px;
 }
 
-#outfit_form {
-	text-align: center;
+#degrees {
+	grid-area: degrees;
+	align-self: center;
+}
+
+#location {
+	grid-area: location;
+	align-self: center;
+	justify-self: end;
+}
+
+#type {
+	grid-area: type;
+}
+
+#date {
+	grid-area: date;
+	justify-self: end;
+}
+
+#title {
+	grid-area: title;
+	justify-self: center;
+	margin-top: 50px;
+}
+
+#form_grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: 
+	". ulabel ."
+	"uoptionone uoptiontwo uoptionthree"
+	". llabel ."
+	"loptionone loptiontwo loptionthree"
+	". flabel ."
+	"foptionone foptiontwo foptionthree"
+	". submit .";
+}
+
+#upper_label {
+	grid-area: ulabel;
+	justify-self: center;
+	margin: 25px;
+}
+
+#upper_option_one {
+	grid-area: uoptionone;
+	justify-self: end;
+}
+
+#upper_option_two {
+	grid-area: uoptiontwo;
+	justify-self: center;
+}
+
+#upper_option_three {
+	grid-area: uoptionthree;
+	justify-self: start;
+}
+
+#lower_label {
+	grid-area: llabel;
+	justify-self: center;
+	margin: 25px;
+}
+
+#lower_option_one {
+	grid-area: loptionone;
+	justify-self: end;
+}
+
+#lower_option_two {
+	grid-area: loptiontwo;
+	justify-self: center;
+}
+
+#lower_option_three {
+	grid-area: loptionthree;
+	justify-self: start;
+}
+
+#foot_label {
+	grid-area: flabel;
+	justify-self: center;
+	margin: 25px;
+}
+
+#foot_option_one {
+	grid-area: foptionone;
+	justify-self: end;
+}
+
+#foot_option_two {
+	grid-area: foptiontwo;
+	justify-self: center;
+}
+
+#foot_option_three {
+	grid-area: foptionthree;
+	justify-self: start;
 }
 
 #submit {
-	margin: 50px;
+	grid-area: submit;
+	justify-self: center;
+	margin: 25px;
+}
+
+.option img {
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+	opacity: .5;
 }
 
 [type='radio'] {
@@ -45,33 +166,6 @@
 	height: 0;
 }
 
-.option img {
-	width: 100px;
-	height: 100px;
-	cursor: pointer;
-	margin: 0 50px;
-}
-
-[type='radio']:checked + .upper {
-	outline: 5px solid #FF0000;
-}
-
-[type='radio']:checked + .lower {
-	outline: 5px solid #0000FF;
-}
-
-[type='radio']:checked + .foot {
-	outline: 5px solid #00FF00;
-}
-
-#upper_label {
- 	color: #FF0000;
-}
-
-#lower_label {
-	color: #0000FF;
-}
-
-#foot_label {
-	color: #00FF00;
+[type='radio']:checked + img {
+	opacity: 1;
 }
