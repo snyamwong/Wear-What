@@ -87,6 +87,11 @@ footer {
     margin: 1em;
 }
 
+.card-body img {
+    max-width: 100%;
+    height: auto;
+}
+
 .jumbotron {
     margin: 1em;
 }
@@ -99,13 +104,6 @@ legend {
     margin: 1em 0em;
     padding: 1em;
     background-color: #ADD8E6;
-}
-
-[type = radio] {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
 }
 
 /* IMAGE STYLES */
