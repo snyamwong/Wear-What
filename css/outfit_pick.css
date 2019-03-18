@@ -1,10 +1,8 @@
-* {
-	margin: 0;
-	padding: 0;
-}
-
 body {
 	font-family: 'Open Sans', sans-serif;
+	background-image: url("../image/weather/rainy_sky.jpg");
+	background-repeat: repeat-x;
+	background-size: 15% 27%;
 }
 
 h1, h2 {
@@ -15,27 +13,29 @@ h1, h2 {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-areas: 
-	". logo_text ."
+	". logotext ."
 	"buttons weather ."
 	". title . "
 }
 
 #logo_text {
-	grid-area: logo_text;
+	grid-area: logotext;
 	justify-self: center;
+	margin-top: 1em;
 }
 
 #degrees_buttons {
 	grid-area: buttons;
 	justify-self: end;
 	margin-top: 2em;
-	margin-right: 1em;
+	margin-right: 2em;
 }
 
 .deg_button {
-	font-size: 10pt;
-	width: 28px;
-	height: 28px;
+	font-size: 15pt;
+	width: 45px;
+	height: 45px;
+	margin-bottom: 1em;
 }
 
 #weather {
@@ -45,20 +45,20 @@ h1, h2 {
 	grid-template-areas: 
 	"degrees . location"
 	"type . date";
-	margin-top: 15px;
+	margin-top: 1em;
 }
 
 #degrees {
 	grid-area: degrees;
 	align-self: center;
-	margin-bottom: 30px;
+	margin-bottom: 4em;
 }
 
 #location {
 	grid-area: location;
 	align-self: center;
 	justify-self: end;
-	margin-bottom: 30px;
+	margin-bottom: 4em;
 }
 
 #type {
@@ -73,7 +73,7 @@ h1, h2 {
 #title {
 	grid-area: title;
 	justify-self: center;
-	margin-top: 50px;
+	margin-top: 1em;
 }
 
 #form_grid {
@@ -92,7 +92,7 @@ h1, h2 {
 #upper_label {
 	grid-area: ulabel;
 	justify-self: center;
-	margin: 25px;
+	margin: 1em;
 }
 
 #upper_option_one {
@@ -113,7 +113,7 @@ h1, h2 {
 #lower_label {
 	grid-area: llabel;
 	justify-self: center;
-	margin: 25px;
+	margin: 1em;
 }
 
 #lower_option_one {
@@ -134,7 +134,7 @@ h1, h2 {
 #foot_label {
 	grid-area: flabel;
 	justify-self: center;
-	margin: 25px;
+	margin: 1em;
 }
 
 #foot_option_one {
@@ -155,7 +155,7 @@ h1, h2 {
 #submit {
 	grid-area: submit;
 	justify-self: center;
-	margin: 25px;
+	margin: 1em;
 }
 
 .option img {
