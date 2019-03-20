@@ -102,7 +102,7 @@ form {
 legend {
     margin: 1em 0em;
     padding: 1em;
-    background-color: #ADD8E6;
+    /* background-color: #ADD8E6; */
 }
 
 .btn p {
