@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/index.html'))
 })
 
-app.post('/', function(req, res){
+app.post('/', (req, res) => {
     console.log(req.body)
 
     res.sendFile(path.join(__dirname + '/outfit_pick.html'))
