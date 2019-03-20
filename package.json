@@ -4,11 +4,11 @@
   "description": "a website that analyzes the weather of your current location, then recommends what to wear to prepare for the weather",
   "main": "yahoo_weather_query.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "bootstrap": "^4.2.1",
     "express": "^4.16.4",
     "jquery": "^3.3.1",
     "mongodb": "^3.1.13",
-    "mysql": "^2.16.0",
     "oauth": "^0.9.15",
     "popper.js": "^1.14.7"
   },
