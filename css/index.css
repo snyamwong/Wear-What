@@ -72,7 +72,6 @@ footer {
     text-align: center;
     font-size: .6em;
     margin-bottom: 0px;
-    overflow: hidden;
 }
 
 .content-section {
@@ -106,6 +105,17 @@ legend {
     background-color: #ADD8E6;
 }
 
+.btn p {
+    display: inline-flex;
+    align-items: flex-end;
+}
+
+input[type="radio"] {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
+}
+
 /* IMAGE STYLES */
 [type = radio] + img {
     -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
@@ -116,5 +126,4 @@ legend {
 [type = radio]:checked + img {
     -webkit-filter: grayscale(0);
     filter: none;
-    outline: 2px solid #f00;
 }
