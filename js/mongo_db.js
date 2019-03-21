@@ -1,7 +1,10 @@
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/";
 
-function queryMongoDB(gender, attire, temperature, conditions) {
+/*
+    Queries MongodDB for a set of clothes
+*/
+export function queryMongoDB(gender, attire, temperature, conditions) {
     MongoClient.connect(url, {useNewUrlParser: true}, function(err, db) {
         if (err) {
             throw err
@@ -9,6 +12,7 @@ function queryMongoDB(gender, attire, temperature, conditions) {
             var dbo = db.db("clothes")
             var category = ''
 
+            // Temperature Logic
             if (temperature < 45) {
                 category += 'cold'
             }
@@ -19,6 +23,7 @@ function queryMongoDB(gender, attire, temperature, conditions) {
                 category += 'hot'
             }
 
+            // Wet | Dry logic
             if (conditions.includes('snow') ||
                 conditions.includes('rain') ||
                 conditions.includes('thunderstorms') ||
