@@ -16,10 +16,6 @@
 </head>
 
 <body>
-    <!-- JS -->
-    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-
     <!-- Header -->
     <header class="masthead d-flex">
         <div class="container text-center my-auto">
@@ -114,7 +110,7 @@
         <h6 class="text-center">Click on the gender and attire you want and we will curate a list of clothes to choose from!</h6>
         <form action="/" method="post">
             <div class="container text-center">
-                <div class="row">
+                <div id="gender-row" class="row">
                     <legend>
                         <h2>Gender</h2>
                     </legend>
@@ -144,11 +140,8 @@
                             </div>
                         </label>
                     </div>
-                    <div class="invalid-feedback">
-                        Please select one of the options.
-                    </div>
                 </div>
-                <div class="row">
+                <div id="attire-row" class="row">
                     <legend>
                         <h2>Attire</h2>
                     </legend>
@@ -191,19 +184,14 @@
                             </div>
                         </label>
                     </div>
-                    <div class="invalid-feedback">
-                        Please select one of the options.
-                    </div>
                 </div>
-                <div class="row">
+                <div id="location-row" class="row">
                     <legend>
                         <h2>Location</h2>
                     </legend>
                     <div class="col-md-12">
-                        <input type="text" id="location" name="location" class="form-control" placeholder="ex. Boston, MA" required>
-                    </div>
-                    <div class="invalid-feedback">
-                        Please provide a valid location.
+                        <input type="text" id="location" name="location" class="form-control" required>
+                        <p class="text-left">ex. Boston, MA</p>
                     </div>
                 </div>
             </div>
@@ -215,6 +203,9 @@
     <footer>
         <span class="align-middle">Made with 💖 by Tin, John and Mo.</span>
     </footer>
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/index.js"></script>
 
 </body>
 
