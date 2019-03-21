@@ -1,0 +1,177 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-image: url("../image/weather/rainy_sky.jpg");
+	background-repeat: repeat-x;
+	background-size: 15% 27%;
+}
+
+h1, h2 {
+	font-family: 'Raleway', sans-serif;
+}
+
+#main_grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: 
+	". logotext ."
+	"buttons weather ."
+	". title . "
+}
+
+#logo_text {
+	grid-area: logotext;
+	justify-self: center;
+	margin-top: 1em;
+}
+
+#degrees_buttons {
+	grid-area: buttons;
+	justify-self: end;
+	margin-top: 2em;
+	margin-right: 2em;
+}
+
+.deg_button {
+	font-size: 15pt;
+	width: 45px;
+	height: 45px;
+	margin-bottom: 1em;
+}
+
+#weather {
+	grid-area: weather;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: 
+	"degrees . location"
+	"type . date";
+	margin-top: 1em;
+}
+
+#degrees {
+	grid-area: degrees;
+	align-self: center;
+	margin-bottom: 4em;
+}
+
+#location {
+	grid-area: location;
+	align-self: center;
+	justify-self: end;
+	margin-bottom: 4em;
+}
+
+#type {
+	grid-area: type;
+}
+
+#date {
+	grid-area: date;
+	justify-self: end;
+}
+
+#title {
+	grid-area: title;
+	justify-self: center;
+	margin-top: 1em;
+}
+
+#form_grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: 
+	". ulabel ."
+	"uoptionone uoptiontwo uoptionthree"
+	". llabel ."
+	"loptionone loptiontwo loptionthree"
+	". flabel ."
+	"foptionone foptiontwo foptionthree"
+	". submit .";
+}
+
+#upper_label {
+	grid-area: ulabel;
+	justify-self: center;
+	margin: 1em;
+}
+
+#upper_option_one {
+	grid-area: uoptionone;
+	justify-self: end;
+}
+
+#upper_option_two {
+	grid-area: uoptiontwo;
+	justify-self: center;
+}
+
+#upper_option_three {
+	grid-area: uoptionthree;
+	justify-self: start;
+}
+
+#lower_label {
+	grid-area: llabel;
+	justify-self: center;
+	margin: 1em;
+}
+
+#lower_option_one {
+	grid-area: loptionone;
+	justify-self: end;
+}
+
+#lower_option_two {
+	grid-area: loptiontwo;
+	justify-self: center;
+}
+
+#lower_option_three {
+	grid-area: loptionthree;
+	justify-self: start;
+}
+
+#foot_label {
+	grid-area: flabel;
+	justify-self: center;
+	margin: 1em;
+}
+
+#foot_option_one {
+	grid-area: foptionone;
+	justify-self: end;
+}
+
+#foot_option_two {
+	grid-area: foptiontwo;
+	justify-self: center;
+}
+
+#foot_option_three {
+	grid-area: foptionthree;
+	justify-self: start;
+}
+
+#submit {
+	grid-area: submit;
+	justify-self: center;
+	margin: 1em;
+}
+
+.option img {
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+	opacity: .5;
+}
+
+[type='radio'] {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+[type='radio']:checked + img {
+	opacity: 1;
+}

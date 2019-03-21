@@ -16,10 +16,6 @@
 </head>
 
 <body>
-    <!-- JS -->
-    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-
     <!-- Header -->
     <header class="masthead d-flex">
         <div class="container text-center my-auto">
@@ -49,31 +45,21 @@
                             <br><br>
                             Using Wear What, we can simplify the process for you by telling you what to wear based on the weather.
                             <br><br>
+                            We can help you dress for sunny, rainy, and all the other weather.
+                            <br><br>
                             Intutition is nice, but technology is even nicer.
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-11 card mx-auto">
-                    <div class="card-header">
-                        <h4>Planning for the Weather</h4>
-                    </div>
-                    <div class="card-body">
-                        <img src="" alt="">
-                    </div>
-                    <div class="card-footer">
-                        <h6>We can help you dress for sunny, rainy, and all the other weather.</h6>
-                    </div>
-                </div>
-            </div>
+
             <div class="row">
                 <div class="col-md-5 card mx-auto">
                     <div class="card-header">
                         <h4>Brick Season Clothes</h4>
                     </div>
                     <div class="card-body">
-                        <img src="" alt="">
+                        <img src="image/olive-coat.jpg" alt="">
                     </div>
                     <div class="card-footer">
                         <h6>To wear jacket, or to not wear jacket...</h6>
@@ -84,7 +70,7 @@
                         <h4>WE MEAN BUSINESS.</h4>
                     </div>
                     <div class="card-body">
-                        <img src="" alt="">
+                        <img src="image/black-wool-slim-fit-jacket.jpg" alt="">
                     </div>
                     <div class="card-footer">
                         <h6 class="card-title">Business means business.</h6>
@@ -97,7 +83,7 @@
                         <h4>IT HOT.</h4>
                     </div>
                     <div class="card-body">
-                        <img src="" alt="">
+                        <img src="image/pink-t-shirt.jpg" alt="">
                     </div>
                     <div class="card-footer">
                         <h6>We be sweating.</h6>
@@ -105,13 +91,13 @@
                 </div>
                 <div class="col-md-5 card mx-auto">
                     <div class="card-header">
-                        <h4>Casual Friday!</h4>
+                        <h4>Autumn Monday Kind of Day</h4>
                     </div>
                     <div class="card-body">
-                        <img src="" alt="">
+                        <img src="image/gray-sweatshirt.jpg" alt="">
                     </div>
                     <div class="card-footer">
-                        <h6>Go all out for Friday!</h6>
+                        <h6>Really not in the mood to get out of bed...</h6>
                     </div>
                 </div>
             </div>
@@ -121,63 +107,91 @@
     <!-- Section: Get Started -->
     <section id="get-started" class="content-section">
         <h1 class="content-section-heading text-center mb-5">Get Started</h1>
-        <form action="index.html" method="post">
+        <h6 class="text-center">Click on the gender and attire you want and we will curate a list of clothes to choose from!</h6>
+        <form action="/" method="post">
             <div class="container text-center">
-                <div class="row">
+                <div id="gender-row" class="row">
                     <legend>
-                        <p>Gender</p>
+                        <h2>Gender</h2>
                     </legend>
                     <div class="col-md-6">
-                        <label for="men">
-                            <input type="radio" id="men" name="gender" value="male" required>
-                            <img src="image/Villager_SSB4.png" alt="">
+                        <label for="men" class="btn btn-light">
+                            <div class="card mx-auto">
+                                <div class="card-header">
+                                    <h4>Men</h4>
+                                </div>
+                                <div class="card-body">
+                                    <input type="radio" id="men" name="gender" value="male" required>
+                                    <img src="image/Villager_SSB4.png" alt="">
+                                </div>
+                            </div>
                         </label>
                     </div>
                     <div class="col-md-6">
-                        <label for="women">
-                            <input type="radio" id="women" name="gender" value="women">
-                            <img src="image/Villager_Female_SSB4.png" alt="">
+                        <label for="women" class="btn btn-light">
+                            <div class="card mx-auto">
+                                <div class="card-header">
+                                    <h4>Women</h4>
+                                </div>
+                                <div class="card-body">
+                                    <input type="radio" id="women" name="gender" value="women">
+                                    <img src="image/Villager_Female_SSB4.png" alt="">
+                                </div>
+                            </div>
                         </label>
                     </div>
-                    <div class="invalid-feedback">
-                        Please select one of the options.
-                    </div>
                 </div>
-                <div class="row">
+                <div id="attire-row" class="row">
                     <legend>
-                        <p>Attire</p>
+                        <h2>Attire</h2>
                     </legend>
                     <div class="col-md-4">
-                        <label for="business">
-                            <input type="radio" id="business" name="attire" value="business" required>
-                            <img src="image/business.jpg" alt="">
+                        <label for="business" class="btn btn-light">
+                            <div class="card mx-auto">
+                                <div class="card-header">
+                                    <h4>Business</h4>
+                                </div>
+                                <div class="card-body">
+                                    <input type="radio" id="business" name="attire" value="business" required>
+                                    <img src="image/business.jpg" alt="">
+                                </div>
+                            </div>
                         </label>
                     </div>
                     <div class="col-md-4">
-                        <label for="business-casual">
-                            <input type="radio" id="business-casual" name="attire" value="business-casual">
-                            <img src="image/business_casual.jpg" alt="">
+                        <label for="business-casual" class="btn btn-light">
+                            <div class="card mx-auto">
+                                <div class="card-header">
+                                    <h4>Business Casual</h4>
+                                </div>
+                                <div class="card-body">
+                                    <input type="radio" id="business-casual" name="attire" value="business-casual">
+                                    <img src="image/business_casual.jpg" alt="">
+                                </div>
+                            </div>
                         </label>
                     </div>
                     <div class="col-md-4">
-                        <label for="casual">
-                            <input type="radio" id="casual" name="attire" value="casual">
-                            <img src="image/casual.jpg" alt="">
+                        <label for="casual" class="btn btn-light">
+                            <div class="card mx-auto">
+                                <div class="card-header">
+                                    <h4>Casual</h4>
+                                </div>
+                                <div class="card-body">
+                                    <input type="radio" id="casual" name="attire" value="casual">
+                                    <img src="image/casual.jpg" alt="">
+                                </div>
+                            </div>
                         </label>
-                    </div>
-                    <div class="invalid-feedback">
-                        Please select one of the options.
                     </div>
                 </div>
-                <div class="row">
+                <div id="location-row" class="row">
                     <legend>
-                        <p>Location</p>
+                        <h2>Location</h2>
                     </legend>
                     <div class="col-md-12">
-                        <input type="text" id="location" name="location" class="form-control" placeholder="ex. Boston, MA" required>
-                    </div>
-                    <div class="invalid-feedback">
-                        Please provide a valid location.
+                        <input type="text" id="location" name="location" class="form-control" required>
+                        <p class="text-left">ex. Boston, MA</p>
                     </div>
                 </div>
             </div>
@@ -187,8 +201,11 @@
     </section>
 
     <footer>
-        <p>Made with 💖 by Tin, John and Mo.</p>
+        <span class="align-middle">Made with 💖 by Tin, John and Mo.</span>
     </footer>
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/index.js"></script>
 
 </body>
 
