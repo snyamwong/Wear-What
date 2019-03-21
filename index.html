@@ -110,7 +110,7 @@
         <h6 class="text-center">Click on the gender and attire you want and we will curate a list of clothes to choose from!</h6>
         <form action="/" method="post">
             <div class="container text-center">
-                <div class="row">
+                <div id="gender-row" class="row">
                     <legend>
                         <h2>Gender</h2>
                     </legend>
@@ -141,7 +141,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="row">
+                <div id="attire-row" class="row">
                     <legend>
                         <h2>Attire</h2>
                     </legend>
@@ -185,12 +185,13 @@
                         </label>
                     </div>
                 </div>
-                <div class="row">
+                <div id="location-row" class="row">
                     <legend>
                         <h2>Location</h2>
                     </legend>
                     <div class="col-md-12">
-                        <input type="text" id="location" name="location" class="form-control" placeholder="ex. Boston, MA" required>
+                        <input type="text" id="location" name="location" class="form-control" required>
+                        <p class="text-left">ex. Boston, MA</p>
                     </div>
                 </div>
             </div>
