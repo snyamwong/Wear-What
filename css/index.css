@@ -60,7 +60,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #about, footer {
-    /* background-color: #698FAE; */
     background-color: #BEC5D3;
 }
 
@@ -82,7 +81,7 @@ footer {
     font-size: 4rem;
 }
 
-.card {
+.card, .jumbotron {
     margin: 1em;
 }
 
@@ -91,23 +90,9 @@ footer {
     height: auto;
 }
 
-.jumbotron {
-    margin: 1em;
-}
-
-form {
-    padding: 4rem;
-}
-
 legend {
     margin: 1em 0em;
     padding: 1em;
-    /* background-color: #ADD8E6; */
-}
-
-.btn p {
-    display: inline-flex;
-    align-items: flex-end;
 }
 
 input[type="radio"] {
