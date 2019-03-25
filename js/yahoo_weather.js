@@ -28,20 +28,22 @@ var request = new OAuth.OAuth(
     output:
     json - data
 */
-export function getYahooWeatherData(location) {
-    request.get(
-        'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=' + location + '&format=json',
-        null,
-        null,
-        function (err, data, result) {
-            if (err) {
-                console.log(err)
-            } else {
-                // Data is JSON String, so first convert it to JSON Object via JSON.parse
-                data = JSON.parse(data)
+module.exports = {
+    getYahooWeatherData: function(location) {
+        request.get(
+            'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=' + location + '&format=json',
+            null,
+            null,
+            function (err, data, result) {
+                if (err) {
+                    console.log(err)
+                } else {
+                    // Data is JSON String, so first convert it to JSON Object via JSON.parse
+                    data = JSON.parse(data)
 
-                return data
+                    return data
+                }
             }
-        }
-    )
+        )
+    }
 }
