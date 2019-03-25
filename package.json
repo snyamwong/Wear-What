@@ -2,7 +2,7 @@
   "name": "wear-what",
   "version": "1.0.0",
   "description": "a website that analyzes the weather of your current location, then recommends what to wear to prepare for the weather",
-  "main": "yahoo_weather_query.js",
+  "main": "js/server.js",
   "dependencies": {
     "body-parser": "^1.18.3",
     "bootstrap": "^4.2.1",
