@@ -49,7 +49,7 @@ function validateForm(evt) {
     // Informs users of what fields are missing
     if(!location_valid || !attire_valid || !gender_valid) {
         instructions.scrollIntoView()
-        instructions.innerHTML = 'Form is incomplete, but you need to select/fill out: <br><br>'
+        instructions.innerHTML = 'Form is incomplete, you still need to select/fill out: <br><br>'
         if(!gender_valid) {
             instructions.innerHTML += 'Gender <br>'
         }

@@ -3,7 +3,7 @@ var fs = require('fs')
 
 // TODO move this somewhere else...
 var header = {
-    "Yahoo-App-Id": "dwjs1W32"
+    "X-Yahoo-App-Id": "dwjs1W32"
 }
 
 // TODO move this somewhere else...
@@ -30,20 +30,32 @@ var request = new OAuth.OAuth(
 */
 module.exports = {
     getYahooWeatherData: function(location) {
-        request.get(
-            'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=' + location + '&format=json',
+        var url = 'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=' + location + '&format=json'
+
+        var output
+
+        function getWeather(callback) {
+            request.get(
+            url,
             null,
             null,
             function (err, data, result) {
                 if (err) {
                     console.log(err)
-                } else {
-                    // Data is JSON String, so first convert it to JSON Object via JSON.parse
-                    data = JSON.parse(data)
-
-                    return data
                 }
-            }
-        )
+
+                success: callback(data)
+            })
+        }
+
+        function setWeather(data) {
+            output = data
+
+            console.log('output: ' + output)
+        }
+
+        getWeather(setWeather)
+
+        return output
     }
 }
