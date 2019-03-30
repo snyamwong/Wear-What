@@ -61,6 +61,14 @@ function validateForm(evt) {
         }
         instructions.style.color = 'red'
     }
+    // if form is valid, save the form data into sessionStorage
+    else {
+        var formData = new FormData(document.querySelector('form'))
+
+        sessionStorage.setItem('gender', formData.get('gender'))
+        sessionStorage.setItem('attire', formData.get('attire'))
+        sessionStorage.setItem('location', formData.get('location'))
+    }
 }
 
 /*
