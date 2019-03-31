@@ -1,25 +1,27 @@
 const http = new XMLHttpRequest();
-
 const outfit_pick_url = "/clothes"
 const yahoo_weather_url = "/yahoo_weather"
 
-function getOutfitPickImage()
+var yahoo_data
+
+function getOutfitPickImage(yahoo_data)
 {
     http.open("POST", outfit_pick_url)
     http.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
     http.send(JSON.stringify({
         "gender": sessionStorage.getItem('gender'),
         "attire": sessionStorage.getItem('attire'),
-        "location": sessionStorage.getItem('location')
+        "temperature": yahoo_data.current_observation.condition.temperature,
+        "condition": yahoo_data.current_observation.condition.text,
     }))
 
     http.onreadystatechange = (e) =>
     {
         if(http.readyState == 4 && http.status == 200)
         {
-            var res = JSON.parse(http.responseText)
+            // var res = JSON.parse(http.responseText)
 
-            console.log(res)
+            console.log(http.responseText)
         }
     }
 }
@@ -38,9 +40,16 @@ function getYahooWeatherData()
         {
             var res = JSON.parse(http.responseText)
 
-            console.log(res)
+            yahoo_data = res
+
+            return res
         }
     }
 }
 
 getYahooWeatherData()
+
+setTimeout(function() {
+    console.log(yahoo_data)
+    getOutfitPickImage(yahoo_data)
+ }, 500)
