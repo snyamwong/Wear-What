@@ -9,6 +9,9 @@ const body_parser = require('body-parser')
 var OAuth = require('oauth')
 var fs = require('fs')
 
+const MongoClient = require('mongodb').MongoClient;
+const url = "mongodb://localhost:27017/";
+
 const app = express()
 
 const server = app.listen(3000, () => {
@@ -52,9 +55,76 @@ function setPickPage() {
         // res.setHeader('Access-Control-Allow-Methods', 'GET')
         console.log(req.body)
 
-        // mongodb.queryMongoDB(req.body)
+        var gender = req.body.gender
+        var attire = req.body.attire
+        var temperature = parseInt(req.body.temperature, 10)
+        var condition = req.body.condition
 
-        res.send(req.body)
+        const queryMongoDB = (gender, attire, temperature, conditions) =>
+            new Promise((resolve, reject) => {
+                MongoClient.connect(url, {useNewUrlParser: true}, function(err, db) {
+                    if (err) {
+                        throw err
+                    } else {
+                        var dbo = db.db("clothes")
+                        var category = ''
+
+                        // Temperature Logic
+                        if (temperature < 45) {
+                            category += 'cold'
+                        }
+                        else if (temperature < 70) {
+                            category += 'mild'
+                        }
+                        else {
+                            category += 'hot'
+                        }
+
+                        // Wet | Dry logic
+                        if (conditions.includes('snow') ||
+                        conditions.includes('rain') ||
+                        conditions.includes('thunderstorms') ||
+                        conditions.includes('showers') ||
+                        conditions.includes('flurries') ||
+                        conditions.includes('drizzle')) {
+                            category += '-wet'
+                        }
+                        else {
+                            category += '-dry'
+                        }
+
+                        var query = {
+                            attire: attire,
+                            category: category,
+                        }
+
+                        dbo.collection(gender).find(query).toArray(function(err, result){
+                            console.log(query)
+
+                            if (err) {
+                                reject(err)
+                            }
+                            else {
+                                resolve(result)
+                            }
+                        })
+
+                    }
+                });
+            });
+
+        async function doStuff() {
+            try {
+                const result = await queryMongoDB('men', 'casual', 95, 'clear')
+                console.log(result)
+                res.send(result)
+            }
+            catch (err) {
+                console.error('There was an error ', err)
+            }
+        }
+
+        doStuff();
     })
 
     app.post('/yahoo_weather', (req, res) => {
