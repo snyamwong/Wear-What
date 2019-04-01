@@ -2,7 +2,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	background-image: url("../image/weather/rainy_sky.jpg");
 	background-repeat: repeat-x;
-	background-size: 15% 27%;
+	background-size: 15% 17em;
 }
 
 h1, h2 {
