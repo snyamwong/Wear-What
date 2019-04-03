@@ -57,7 +57,7 @@ function setPickPage() {
 
         var gender = req.body.gender
         var attire = req.body.attire
-        var temperature = parseInt(req.body.temperature, 10)
+        var temperature = req.body.temperature
         var condition = req.body.condition
 
         const queryMongoDB = (gender, attire, temperature, conditions) =>
@@ -69,14 +69,16 @@ function setPickPage() {
                         var dbo = db.db("clothes")
                         var category = ''
 
+                        console.log('temperature: ' + temperature)
+
                         // Temperature Logic
-                        if (temperature < 45) {
+                        if (temperature <= 45) {
                             category += 'cold'
                         }
-                        else if (temperature < 70) {
+                        else if (temperature > 45 && temperature < 75) {
                             category += 'mild'
                         }
-                        else {
+                        else if(temperature >= 75) {
                             category += 'hot'
                         }
 
@@ -115,7 +117,7 @@ function setPickPage() {
 
         async function doStuff() {
             try {
-                const result = await queryMongoDB('men', 'casual', 95, 'clear')
+                const result = await queryMongoDB(gender, attire, temperature, condition)
                 console.log(result)
                 res.send(result)
             }

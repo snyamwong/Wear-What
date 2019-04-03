@@ -24,13 +24,13 @@ window.addEventListener("load", function(e) {
 					picked.style.width = "175px";
 					picked.style.height = "175px";
 				}
-			} 
+			}
 		}
 		for(var i = 0; i < labels.length; i++) {
 			if(labels[i].id != "upper_option_two" && labels[i].id != "lower_option_two" && labels[i].id != "foot_option_two") {
 				labels[i].style.display = "none";
 			}
-		} 
+		}
 		document.getElementById("submit").style.display = "none";
 		e.preventDefault();
 	});
