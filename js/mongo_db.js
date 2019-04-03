@@ -113,7 +113,7 @@ async function doStuff() {
     }
 }
 
-doStuff();
+// doStuff();
 /*
 function queryMongoDB(gender, attire, temperature, conditions) {
     MongoClient.connect(url, {useNewUrlParser: true}, function(err, db) {
