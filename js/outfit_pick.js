@@ -95,6 +95,36 @@ function getYahooWeatherData()
 
             // change the background according to condition
 
+            var weather = yahoo_data.current_observation.condition.code;
+            if(weather <= 12) {
+                document.body.style.backgroundImage = "url('../image/weather/rainy_sky.jpg')";
+                document.body.style.backgroundSize = "15% 17em";
+            } else if(weather >= 13 && weather <= 18) {
+                document.body.style.backgroundImage = "url('../image/weather/snowy_sky.jpg')";
+                document.body.style.backgroundSize = "100% 17em";
+            } else if(weather >= 19 && weather <= 26) {
+                document.body.style.backgroundImage = "url('../image/weather/gray_sky.jpg')";
+                document.body.style.backgroundSize = "100% 17em";
+            } else if(weather == 27 || weather == 29) {
+                document.body.style.backgroundImage = "url('../image/weather/cloudy_night_sky.jpg')";
+                document.body.style.backgroundSize = "100% 17em";
+                document.getElementById("logo_text").style.color = "white";
+                document.getElementById("degrees").style.color = "white";
+                document.getElementById("location").style.color = "white";
+                document.getElementById("type").style.color = "white";
+                document.getElementById("date").style.color = "white";
+            } else if(weather == 31 || weather == 33) {
+                document.body.style.backgroundImage = "url('../image/weather/clear_night_sky.jpg')";
+                document.body.style.backgroundSize = "50% 17em";
+                document.getElementById("logo_text").style.color = "white";
+                document.getElementById("degrees").style.color = "white";
+                document.getElementById("location").style.color = "white";
+                document.getElementById("type").style.color = "white";
+                document.getElementById("date").style.color = "white";
+            } else if(weather == 32 || weather == 34 || weather == 36) {
+                document.body.style.backgroundImage = "url('../image/weather/blue_sky.jpg')";
+                document.body.style.backgroundSize = "100% 17em";
+            }
         }
     }
 }
