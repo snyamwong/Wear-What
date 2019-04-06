@@ -98,15 +98,25 @@ function getYahooWeatherData()
             // change the background according to condition
 
             var weather = yahoo_data.current_observation.condition.code;
-            if(weather <= 12) {
+            if(weather <= 12 || (weather >= 37 && weather <= 40) || weather == 35 || weather == 45 || weather == 47) {
                 document.body.style.backgroundImage = "url('../image/weather/rainy_sky.jpg')";
                 document.body.style.backgroundSize = "15% 17em";
-            } else if(weather >= 13 && weather <= 18) {
+            } else if((weather >= 13 && weather <= 18) || (weather >= 41 && weather <= 43) || weather == 46) {
                 document.body.style.backgroundImage = "url('../image/weather/snowy_sky.jpg')";
                 document.body.style.backgroundSize = "100% 17em";
-            } else if((weather >= 19 && weather <= 26) || weather == 30) {
+                var buttons = document.getElementsByClassName("btn");
+                for(var i = 0; i < buttons.length; i++) {
+                    buttons[i].classList.remove("btn-primary");
+                    buttons[i].classList.add("btn-light")
+                }
+            } else if((weather >= 19 && weather <= 26) || weather == 28 || weather == 30 || weather == 44) {
                 document.body.style.backgroundImage = "url('../image/weather/gray_sky.jpg')";
                 document.body.style.backgroundSize = "100% 17em";
+                var buttons = document.getElementsByClassName("btn");
+                for(var i = 0; i < buttons.length; i++) {
+                    buttons[i].classList.remove("btn-primary");
+                    buttons[i].classList.add("btn-secondary")
+                }
             } else if(weather == 27 || weather == 29) {
                 document.body.style.backgroundImage = "url('../image/weather/cloudy_night_sky.jpg')";
                 document.body.style.backgroundSize = "100% 17em";
@@ -115,6 +125,11 @@ function getYahooWeatherData()
                 document.getElementById("location").style.color = "white";
                 document.getElementById("type").style.color = "white";
                 document.getElementById("date").style.color = "white";
+                var buttons = document.getElementsByClassName("btn");
+                for(var i = 0; i < buttons.length; i++) {
+                    buttons[i].classList.remove("btn-primary");
+                    buttons[i].classList.add("btn-dark")
+                }
             } else if(weather == 31 || weather == 33) {
                 document.body.style.backgroundImage = "url('../image/weather/clear_night_sky.jpg')";
                 document.body.style.backgroundSize = "50% 17em";
@@ -123,6 +138,11 @@ function getYahooWeatherData()
                 document.getElementById("location").style.color = "white";
                 document.getElementById("type").style.color = "white";
                 document.getElementById("date").style.color = "white";
+                var buttons = document.getElementsByClassName("btn");
+                for(var i = 0; i < buttons.length; i++) {
+                    buttons[i].classList.remove("btn-primary");
+                    buttons[i].classList.add("btn-dark")
+                }
             } else if(weather == 32 || weather == 34 || weather == 36) {
                 document.body.style.backgroundImage = "url('../image/weather/blue_sky.jpg')";
                 document.body.style.backgroundSize = "100% 17em";
