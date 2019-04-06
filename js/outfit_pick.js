@@ -3,6 +3,8 @@ const outfit_pick_url = "/clothes"
 const yahoo_weather_url = "/yahoo_weather"
 
 var yahoo_data
+var fDegrees = document.getElementById("f_degrees");
+var cDegrees = document.getElementById("c_degrees");
 
 function getOutfitPickImage(yahoo_data)
 {
@@ -70,7 +72,7 @@ function getYahooWeatherData()
             // get the div of the weather
             var degree = document.getElementById('degrees')
 
-            degree.innerHTML = yahoo_data.current_observation.condition.temperature
+            degree.innerHTML = yahoo_data.current_observation.condition.temperature + "\xB0"
 
             var location = document.getElementById('location')
 
@@ -102,7 +104,7 @@ function getYahooWeatherData()
             } else if(weather >= 13 && weather <= 18) {
                 document.body.style.backgroundImage = "url('../image/weather/snowy_sky.jpg')";
                 document.body.style.backgroundSize = "100% 17em";
-            } else if(weather >= 19 && weather <= 26) {
+            } else if((weather >= 19 && weather <= 26) || weather == 30) {
                 document.body.style.backgroundImage = "url('../image/weather/gray_sky.jpg')";
                 document.body.style.backgroundSize = "100% 17em";
             } else if(weather == 27 || weather == 29) {
@@ -128,6 +130,16 @@ function getYahooWeatherData()
         }
     }
 }
+
+f_degrees.addEventListener("click", function(e) {
+        var degrees = document.getElementById("degrees");
+        degrees.innerHTML = yahoo_data.current_observation.condition.temperature + "\xB0";
+});
+
+c_degrees.addEventListener("click", function(e) {
+        var degrees = document.getElementById("degrees");
+        degrees.innerHTML = Math.round((yahoo_data.current_observation.condition.temperature - 32)/1.8) + "\xB0";
+});
 
 getYahooWeatherData()
 
