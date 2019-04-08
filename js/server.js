@@ -9,8 +9,8 @@ const body_parser = require('body-parser')
 var OAuth = require('oauth')
 var fs = require('fs')
 
-const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb://localhost:27017/";
+const MongoClient = require('mongodb').MongoClient
+const url = "mongodb://localhost:27017/"
 
 const app = express()
 
@@ -53,8 +53,6 @@ function setPickPage() {
     app.post('/clothes', (req, res) => {
         // Request methods you wish to allow
         // res.setHeader('Access-Control-Allow-Methods', 'GET')
-        console.log(req.body)
-
         var gender = req.body.gender
         var attire = req.body.attire
         var temperature = req.body.temperature
@@ -68,8 +66,6 @@ function setPickPage() {
                     } else {
                         var dbo = db.db("clothes")
                         var category = ''
-
-                        console.log('temperature: ' + temperature)
 
                         // Temperature Logic
                         if (temperature <= 45) {
@@ -101,8 +97,6 @@ function setPickPage() {
                         }
 
                         dbo.collection(gender).find(query).toArray(function(err, result){
-                            console.log(query)
-
                             if (err) {
                                 reject(err)
                             }
@@ -110,15 +104,14 @@ function setPickPage() {
                                 resolve(result)
                             }
                         })
-
                     }
-                });
-            });
+                })
+            })
 
-        async function doStuff() {
+        async function asyncQueryMongoDB() {
             try {
                 const result = await queryMongoDB(gender, attire, temperature, condition)
-                console.log(result)
+
                 res.send(result)
             }
             catch (err) {
@@ -126,18 +119,15 @@ function setPickPage() {
             }
         }
 
-        doStuff();
+        asyncQueryMongoDB()
     })
 
     app.post('/yahoo_weather', (req, res) => {
         // Request methods you wish to allow
         // res.setHeader('Access-Control-Allow-Methods', 'GET')
-
-        console.log(req.body.location)
-
-        var url = 'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=' + req.body.location + '&format=json'
-
-        console.log(url)
+        var url = 'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=' +
+                    req.body.location +
+                    '&format=json'
 
         var header = {
             "X-Yahoo-App-Id": "dwjs1W32"
@@ -158,29 +148,36 @@ function setPickPage() {
             header
         )
 
-        // using a callback to fix the problem of returning a variable too early
-        request.get(
-        url,
-        null,
-        null,
-        function (err, data, result) {
-            if (err) {
-                res.send(err.body)
-            }
-            else {
-                console.log(data)
+        const getYahooWeatherData = () =>
+            new Promise((resolve, reject) => {
+                // using a callback to fix the problem of returning a variable too early
+                request.get(
+                url,
+                null,
+                null,
+                function (err, data, result) {
+                    if (err) {
+                        reject(err)
+                    }
+                    else {
+                        resolve(data)
+                    }
+                })
+            })
+
+        async function asyncGetYahooWeatherData() {
+            try {
+                const data = await getYahooWeatherData()
 
                 res.send(data)
             }
-        })
+            catch (err) {
+                console.error('There was an error ', err)
+            }
+        }
+
+        asyncGetYahooWeatherData()
     })
-}
-
-/*
-    Sets up endpoints for result.html
-*/
-function setDisplayPage() {
-
 }
 
 /*
@@ -196,17 +193,3 @@ function init() {
 
 // Start the server
 init()
-
-/*
-function yahooWeatherAsync(callback, location) {
-    setTimeout(function() {
-        data = callback(location)
-
-        console.log(data)
-
-        res.send(data)
-    }, 2000);
-}
-
-yahooWeatherAsync(yahoo_weather.getYahooWeatherData, req.body.location)
-*/
