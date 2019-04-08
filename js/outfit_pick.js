@@ -6,54 +6,26 @@ var yahoo_data
 var fDegrees = document.getElementById("f_degrees");
 var cDegrees = document.getElementById("c_degrees");
 
-function getOutfitPickImage(yahoo_data)
+/*
+
+*/
+function setListeners()
 {
-    http.open("POST", outfit_pick_url)
-    http.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
-    http.send(JSON.stringify({
-        "gender": sessionStorage.getItem('gender'),
-        "attire": sessionStorage.getItem('attire'),
-        "temperature": yahoo_data.current_observation.condition.temperature,
-        "condition": yahoo_data.current_observation.condition.text,
-    }))
+    f_degrees.addEventListener("click", function(e) {
+            var degrees = document.getElementById("degrees");
+            degrees.innerHTML = yahoo_data.current_observation.condition.temperature + "\xB0";
+    });
 
-    http.onreadystatechange = (e) =>
-    {
-        if(http.readyState == 4 && http.status == 200)
-        {
-            var res = JSON.parse(http.responseText)
-
-            // change clothes according to mongodb query
-
-            console.log(res)
-
-            var upper_attire = document.getElementsByClassName('upper_option')
-            var lower_attire = document.getElementsByClassName('lower_option')
-            var foot_attire = document.getElementsByClassName('foot_option')
-
-            var upper_i = 0, lower_i = 0, foot_i = 0
-
-            for (var i = 0; i < res.length; i++)
-            {
-                var key = res[i]
-                if(key.type === 'upper')
-                {
-                    upper_attire[upper_i++].lastElementChild.src = key.src + '.jpg'
-                }
-                if(key.type === 'lower')
-                {
-                    lower_attire[lower_i++].lastElementChild.src = key.src + '.jpg'
-                }
-                if(key.type === 'foot')
-                {
-                    foot_attire[foot_i++].lastElementChild.src = key.src + '.jpg'
-                }
-            }
-        }
-    }
+    c_degrees.addEventListener("click", function(e) {
+            var degrees = document.getElementById("degrees");
+            degrees.innerHTML = Math.round((yahoo_data.current_observation.condition.temperature - 32)/1.8) + "\xB0";
+    });
 }
 
-function getYahooWeatherData()
+/*
+
+*/
+async function getYahooWeatherData()
 {
     http.open("POST", yahoo_weather_url)
     http.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
@@ -65,9 +37,9 @@ function getYahooWeatherData()
     {
         if(http.readyState == 4 && http.status == 200)
         {
-            var res = JSON.parse(http.responseText)
+            var yahoo_data = JSON.parse(http.responseText)
 
-            yahoo_data = res
+                 getOutfitPickImage(yahoo_data)
 
             // get the div of the weather
             var degree = document.getElementById('degrees')
@@ -151,19 +123,56 @@ function getYahooWeatherData()
     }
 }
 
-f_degrees.addEventListener("click", function(e) {
-        var degrees = document.getElementById("degrees");
-        degrees.innerHTML = yahoo_data.current_observation.condition.temperature + "\xB0";
-});
+/*
+    Changes clothes according to mongodb query
+*/
+async function getOutfitPickImage(yahoo_data)
+{
+    http.open("POST", outfit_pick_url)
+    http.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
+    http.send(JSON.stringify({
+        "gender": sessionStorage.getItem('gender'),
+        "attire": sessionStorage.getItem('attire'),
+        "temperature": yahoo_data.current_observation.condition.temperature,
+        "condition": yahoo_data.current_observation.condition.text,
+    }))
 
-c_degrees.addEventListener("click", function(e) {
-        var degrees = document.getElementById("degrees");
-        degrees.innerHTML = Math.round((yahoo_data.current_observation.condition.temperature - 32)/1.8) + "\xB0";
-});
+    http.onreadystatechange = (e) =>
+    {
+        if(http.readyState == 4 && http.status == 200)
+        {
+            var res = JSON.parse(http.responseText)
 
-getYahooWeatherData()
+            var upper_attire = document.getElementsByClassName('upper_option')
+            var lower_attire = document.getElementsByClassName('lower_option')
+            var foot_attire = document.getElementsByClassName('foot_option')
 
-setTimeout(function() {
-    console.log(yahoo_data)
-    getOutfitPickImage(yahoo_data)
- }, 500)
+            var upper_i = 0, lower_i = 0, foot_i = 0
+
+            for (var i = 0; i < res.length; i++)
+            {
+                var key = res[i]
+                if(key.type === 'upper')
+                {
+                    upper_attire[upper_i++].lastElementChild.src = key.src + '.jpg'
+                }
+                if(key.type === 'lower')
+                {
+                    lower_attire[lower_i++].lastElementChild.src = key.src + '.jpg'
+                }
+                if(key.type === 'foot')
+                {
+                    foot_attire[foot_i++].lastElementChild.src = key.src + '.jpg'
+                }
+            }
+        }
+    }
+}
+
+async function init() {
+    setListeners()
+
+    getYahooWeatherData()
+}
+
+init()
