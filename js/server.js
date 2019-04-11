@@ -1,8 +1,3 @@
-// Gets data from Yahoo! weather api
-const yahoo_weather = require('./yahoo_weather.js')
-// Gets a set of clothes from MongoDB
-const mongodb = require('./mongo_db.js')
-
 const path = require('path')
 const express = require('express')
 const body_parser = require('body-parser')

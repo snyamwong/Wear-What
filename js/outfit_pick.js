@@ -37,9 +37,9 @@ async function getYahooWeatherData()
     {
         if(http.readyState == 4 && http.status == 200)
         {
-            var yahoo_data = JSON.parse(http.responseText)
+            yahoo_data = JSON.parse(http.responseText)
 
-                 getOutfitPickImage(yahoo_data)
+            getOutfitPickImage(yahoo_data)
 
             // get the div of the weather
             var degree = document.getElementById('degrees')
