@@ -125,22 +125,10 @@ function setPickPage() {
                     '&format=json'
 
         var header = {
-            "X-Yahoo-App-Id": "dwjs1W32"
         }
 
         // TODO move this somewhere else...
         var request = new OAuth.OAuth(
-            null,
-            null,
-            // consumer key
-            'dj0yJmk9eUxGZ1JhN2JMekJ6JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTg5',
-            // consumer secret
-            '3bb64e78ade0e82e9e35136f0a3e42313f3c038a',
-            '1.0',
-            null,
-            'HMAC-SHA1',
-            null,
-            header
         )
 
         const getYahooWeatherData = () =>
